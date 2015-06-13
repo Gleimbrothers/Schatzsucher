@@ -45,7 +45,7 @@ if(!parseInt($.cookie("score"))){
 $.cookie ("score",0);
 
 }
-$("#prozent").html("prozenz: "+$.cookie("score"));
+$("#prozent").html("prozenz: "+(parseInt($.cookie("score")*2)));
 $('#Nickname').html($.cookie('benutzername'));
 $('#score').html("score: "+$.cookie('score'));
 </script>
