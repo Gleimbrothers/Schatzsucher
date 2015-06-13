@@ -27,6 +27,9 @@
 if(!$.cookie('benutzername')){
 	$.cookie('benutzername', prompt("Geben Sie Ihr Benutzername fuer diese Seite ein", ""), { expires: 7 });
 }
+$.cookie ("score",10);
+
+
 $('#Nickname').html($.cookie('benutzername'));
 $('#score').html($.cookie('score'));
 </script>
