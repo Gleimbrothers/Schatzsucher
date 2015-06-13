@@ -13,9 +13,9 @@
 <table width="100%">
 <thead>
 <tr>
-  <th align="left">Score: X</th>
+  <th align="left" id="score">Score: X</th>
  
-  <th align="right" id="Nickname">Nichname:()</th>
+  <th align="right" id="Nickname">Nickname:()</th>
 </tr>
 </thead>
 </table>
@@ -28,33 +28,25 @@
   <th>Fortschritt</th>
 </tr>
 </thead>
-<tbody><tr>
-  <td>Media Markt</td>
-  <td>20%</td>
-</tr>
-<tr>
-  <td>H&amp;M</td>
-  <td>40%</td>
-</tr>
-<tr>
-  <td>Rewe</td>
-  <td>80%</td>
-</tr>
-<tr>
-  <td>Lidl</td>
-  <td>60%</td>
-</tr>
+<tbody>
 <tr>
   <td>Müller</td>
   <td>45%</td>
 </tr>
 </tbody></table>
-<script>
-$('#Nickname').html('mit jQuery Inhalte ändern');
-$.get( "http://127.0.0.1:5984/schatzjaeger/687145dd854069f313d8aabb7e0005ec", function( data ) {
-  $( ".result" ).html( data );
-   $('#Nickname').html( data.Name );
- console.log( data.Name );
-},"json");
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript">
+if(!$.cookie('benutzername')){
+	$.cookie('benutzername', prompt("Geben Sie Ihr Benutzername fuer diese Seite ein", ""), { expires: 7 });
+}
+if(!parseInt($.cookie("score"))){
+$.cookie ("score",0);
+
+}
+
+$('#Nickname').html($.cookie('benutzername'));
+$('#score').html("score: "+$.cookie('score'));
+</script>
 </body>
 </html>
