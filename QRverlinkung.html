@@ -23,7 +23,11 @@
 <p></p><center><a href="file:///C:/Users/Christoph/Desktop/Schatzjaeger/daten.html">Show your Points</a></center><p></p>  
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-<script>
+<script type="text/javascript">
+console.log(document.cookie);
+document.cookie="username=John Doe";
+console.log(document.cookie);
+
 if(!$.cookie('benutzername')){
 $.cookie('benutzername',"hey");
 //$.cookie('benutzername', prompt("Geben Sie Ihr Benutzername fuer diese Seite ein", ""), { expires: 7 });
