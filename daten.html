@@ -31,7 +31,7 @@
 <tbody>
 <tr>
   <td>Müller</td>
-  <td id="prozent" id="score">45%</td>
+  <td id="prozent">45%</td>
   
 </tr>
 </tbody></table>
@@ -45,7 +45,7 @@ if(!parseInt($.cookie("score"))){
 $.cookie ("score",0);
 
 }
-
+$("#prozent").html("prozenz: "+$.cookie("score"));
 $('#Nickname').html($.cookie('benutzername'));
 $('#score').html("score: "+$.cookie('score'));
 </script>
