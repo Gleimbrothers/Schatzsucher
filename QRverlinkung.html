@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body><center><h1 id="schatzjäger">Schatzjäger</h1>
+
+<center><table width="100%">
+<thead>
+<tr>
+  <th align="left">Score: 12345</th>
+  <th align="right" id="Nickname">Nickname:()</th>
+</tr>
+</thead>
+</table>
+
+
+<p></p><center><img width="200" src="https://www.mueller.de/fileadmin/mount/de/downloads_media/Slogan_cmyk.gif" alt="Alternativer Text"></center><p></p>
+
+<p></p><center> <b>u’re got 5 points</b></center><p></p>
+
+<p></p><center><a href="file:///C:/Users/Christoph/Desktop/Schatzjaeger/daten.html">Show your Points</a></center><p></p>  
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script>
+$.cookie('benutzername', prompt("Geben Sie Ihr Benutzername fuer diese Seite ein", ""), { expires: 7 });
+ $('#Nickname').html('mit jQuery Inhalte ändern');
+$.get( "http://127.0.0.1:5984/schatzjaeger/687145dd854069f313d8aabb7e0005ec", function( data ) {
+  $( ".result" ).html( data );
+   $('#Nickname').html( data.Name );
+ console.log( data.Name );
+},"json");
+</script>
+</body>
+</html>
