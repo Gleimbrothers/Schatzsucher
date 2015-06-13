@@ -27,7 +27,7 @@
 if(!$.cookie('benutzername')){
 	$.cookie('benutzername', prompt("Geben Sie Ihr Benutzername fuer diese Seite ein", ""), { expires: 7 });
 }
-if(!$.isNumeric($.cookie("score"))){
+if(!parseInt($.cookie("score"))){
 $.cookie ("score",0);
 
 }
