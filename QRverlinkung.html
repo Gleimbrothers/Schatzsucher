@@ -9,7 +9,7 @@
 <center><table width="100%">
 <thead>
 <tr>
-  <th align="left">Score: 12345</th>
+  <th align="left" id="score">score: </th>
   <th align="right" id="Nickname">Nickname:()</th>
 </tr>
 </thead>
@@ -28,6 +28,7 @@ if(!$.cookie('benutzername')){
 	$.cookie('benutzername', prompt("Geben Sie Ihr Benutzername fuer diese Seite ein", ""), { expires: 7 });
 }
 $('#Nickname').html($.cookie('benutzername'));
+$('#score').html($.cookie('score'));
 </script>
 </body>
 </html>
