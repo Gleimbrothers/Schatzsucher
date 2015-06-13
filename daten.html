@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- page content -->
+<center><h1 id="schatzjäger">Schatzjäger</h1>
+
+<table width="100%">
+<thead>
+<tr>
+  <th align="left">Score: X</th>
+ 
+  <th align="right" id="Nickname">Nichname:()</th>
+</tr>
+</thead>
+</table>
+
+
+<center><table>
+<thead>
+<tr>
+  <th>Läden</th>
+  <th>Fortschritt</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Media Markt</td>
+  <td>20%</td>
+</tr>
+<tr>
+  <td>H&amp;M</td>
+  <td>40%</td>
+</tr>
+<tr>
+  <td>Rewe</td>
+  <td>80%</td>
+</tr>
+<tr>
+  <td>Lidl</td>
+  <td>60%</td>
+</tr>
+<tr>
+  <td>Müller</td>
+  <td>45%</td>
+</tr>
+</tbody></table>
+<script>
+$('#Nickname').html('mit jQuery Inhalte ändern');
+$.get( "http://127.0.0.1:5984/schatzjaeger/687145dd854069f313d8aabb7e0005ec", function( data ) {
+  $( ".result" ).html( data );
+   $('#Nickname').html( data.Name );
+ console.log( data.Name );
+},"json");
+</body>
+</html>
